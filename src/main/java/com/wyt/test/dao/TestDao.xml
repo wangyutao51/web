@@ -15,4 +15,8 @@
 		update userinfo t set t.passwd = #{passwd} where t.userid = #{userid}
 	</update>
 	
+	<select id="queryUserList" resultType="com.wyt.test.bean.UserInfo">
+		SELECT T.USERID,T.USERNAME,T.PASSWD FROM USERINFO T
+	</select>
+	
 </mapper>  

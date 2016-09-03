@@ -1,5 +1,7 @@
 package com.wyt.testunit;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ public class TestDaotest {
 		System.out.println("���Խ���");
 	}
 	
-	@Test
+	//@Test
 	public void testInsert()
 	{
 		UserInfo ui = new UserInfo();
@@ -39,6 +41,13 @@ public class TestDaotest {
 		int t = testDao.updateUserinfo("TestId", "adminTest");
 		System.out.println(t);
 		
+	}
+	
+	@Test
+	public void testList()
+	{
+		List<UserInfo> userList = testDao.queryUserList();
+		System.out.println(userList.size());
 	}
 
 	public TestDao getTestDao() {
