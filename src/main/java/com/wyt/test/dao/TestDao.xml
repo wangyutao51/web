@@ -7,4 +7,12 @@
 		select t.userid from userinfo t where t.userid = #{username}
 	</select>
 	
+	<insert id="insertUserInfo" parameterType="com.wyt.test.bean.UserInfo">
+		INSERT INTO userinfo VALUES (#{userId},#{userName} , #{passwd}) 
+	</insert>
+	
+	<update id="updateUserinfo" parameterType="java.lang.String">
+		update userinfo t set t.passwd = #{passwd} where t.userid = #{userid}
+	</update>
+	
 </mapper>  

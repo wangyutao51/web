@@ -6,22 +6,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.wyt.test.bean.UserInfo;
 import com.wyt.test.dao.TestDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//ĞèÒªÅäÖÃÊı¾İÔ´µÄÏà¹ØĞÅÏ¢
+//éœ€è¦é…ç½®æ•°æ®æºçš„ç›¸å…³ä¿¡æ¯
 @ContextConfiguration(locations={"file:src/main/resources/spring/applicationContext.xml"})
 public class TestDaotest {
 	
 	@Autowired
 	private TestDao testDao;
 	
-	@Test
+	//@Test
 	public void testDao()
 	{
-		System.out.println("²âÊÔ¿ªÊ¼");
+		System.out.println("ï¿½ï¿½ï¿½Ô¿ï¿½Ê¼");
 		System.out.println(testDao.qruUserId("admin"));
-		System.out.println("²âÊÔ½áÊø");
+		
+		System.out.println("ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½");
+	}
+	
+	@Test
+	public void testInsert()
+	{
+		UserInfo ui = new UserInfo();
+		ui.setUserId("TestId");
+		ui.setUserName("TestName");
+		ui.setPasswd("TestAdmin");
+		
+//		int test = testDao.insertUserInfo(ui);
+		
+		int t = testDao.updateUserinfo("TestId", "adminTest");
+		System.out.println(t);
+		
 	}
 
 	public TestDao getTestDao() {
