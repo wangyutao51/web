@@ -33,6 +33,7 @@ public class TestAction
 		String userId = testService.queryUserIdByName("admin");
 		System.out.println(userId);
 		log.info("The action is runing");
+		
 		return null;
 	}
 
